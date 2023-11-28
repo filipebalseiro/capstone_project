@@ -1,0 +1,5 @@
+version: 2
+
+models:
+  - name: int_claim_diagnosis_pivoted
+  - name: int_billed_claim_amounts

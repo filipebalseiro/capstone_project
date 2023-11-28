@@ -1,0 +1,25 @@
+version: 2
+
+sources:
+  - name: ehr_data
+    schema: dev_raw
+    database: ehr
+    loaded_at_field: _fivetran_synced_at
+    freshness: 
+      warn_after: {count: 12, period: hour}
+    tables:
+      - name: doctors
+        columns:
+          - name: id
+            tests:
+              - unique
+      - name: doc_specialties
+        columns: 
+          - name: id
+            tests:
+              - unique
+      - name: patients
+        columns:
+          - name: id
+            tests:
+              - unique
